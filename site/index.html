@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Aplikatorzy — car wrapping i folie PPF w Gdyni</title>
+<meta name="description" content="Aplikatorzy: car wrapping, zmiana koloru auta, folie ochronne PPF, grafika i stylizacja pojazdów w Gdyni. Wybierz folię i zobacz efekt na samochodzie 3D." />
+<meta name="theme-color" content="#07080a" />
+<meta name="robots" content="noindex, nofollow" />   <!-- concept demo: remove this line when the real site goes live -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:site_name" content="Aplikatorzy" />
+<meta property="og:title" content="Aplikatorzy — car wrapping i folie PPF w Gdyni" />
+<meta property="og:description" content="Aplikatorzy: car wrapping, zmiana koloru auta, folie ochronne PPF, grafika i stylizacja pojazdów w Gdyni. Wybierz folię i zobacz efekt na samochodzie 3D." />
+<meta property="og:url" content="https://aplikatorzy.pl/" />
+<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://aplikatorzy.pl/" />
+<link rel="icon" href="media/logo-mark.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600&family=Inter:wght@300;400;500&family=Michroma&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="src/style.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutomotiveBusiness","name":"Aplikatorzy","description":"Car wrapping, zmiana koloru auta, folie ochronne PPF i stylizacja pojazdów w Gdyni.","telephone":"+48 789 353 198","email":"biuro@aplikatorzy.pl","address":{"@type":"PostalAddress","streetAddress":"ul. Nowodworcowa 13","postalCode":"81-581","addressLocality":"Gdynia","addressCountry":"PL"}}
+</script>
+
+<style>
+    html, body { margin: 0; background: #07080a; color: #eef1f5; }
+    :root { color-scheme: dark; }
+    body { overflow-x: hidden; }
+    #stage {
+      position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100svh;
+      display: block; z-index: 1; background: #0a0b0d;
+    }
+    #loader { position: fixed; inset: 0; z-index: 200; background: #07080a; }
+    #boot-note {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 400;
+      margin: 0; padding: 10px 14px; font: 12px/1.45 ui-monospace, Menlo, monospace;
+      background: rgba(200, 210, 222, 0.12); color: #dfe6ee;
+      border-top: 1px solid rgba(200, 210, 222, 0.35);
+      white-space: pre-wrap; word-break: break-word;
+    }
+</style>
+<noscript><style>#stage,.stage-veil,.beats,.lamp,.wraps,.rail,.cinema,#loader{display:none!important} .site{margin-top:0!important}</style></noscript>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="ap-mark" viewBox="0 0 40 30">
+    <path d="M5 28.5 20 1.8 35 28.5M12.4 18.6h15.2" fill="none" stroke="currentColor" stroke-width="2.6" />
+  </symbol>
+</svg>
+<a class="skip" href="#site">Przejdź do treści</a>
+
+<!-- Names the stage the boot sequence reached, so a failure is legible
+     instead of being a blank screen. Hidden unless something stalls. -->
+<p id="boot-note" hidden></p>
+<script>
+  (function () {
+    var W = window;
+    W.__rcStage = 'start';
+    W.__rcMark = function (s) { W.__rcStage = s; };
+    function note(t) {
+      var el = document.getElementById('boot-note');
+      if (!el) return;
+      el.textContent = t;
+      el.hidden = false;
+    }
+    W.__rcNote = note;
+    // If the film has not started within 25 s and nothing was reported, say
+    // where it got stuck rather than leaving an empty stage.
+    W.setTimeout(function () {
+      if (W.__rcRunning) return;
+      var ld = document.getElementById('loader');
+      if (ld && !ld.classList.contains('is-done') && !W.__rcRetried) { W.__rcRetried = 1; W.setTimeout(arguments.callee, 25000); return; }
+      var box = document.getElementById('fatal');
+      if (box && !box.hidden) return;
+      console.warn('3D stalled at', W.__rcStage, W.__rcGpu); note('Scena 3D ładuje się dłużej niż zwykle. Reszta strony działa — możesz przewijać.');
+    }, 25000);
+  })();
+</script>
+
+
+<div id="loader" class="loader" role="status" aria-live="polite">
+  <div class="loader__inner">
+    <div class="loader__mark">
+      <span class="aplogo aplogo--loader" role="img" aria-label="Aplikatorzy.pl"><span class="aplogo__a" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><path d="M7 31 20 8 33 31h-6.5L20 19l-6.5 12Z" fill="#fff"/></svg></span><span class="aplogo__t" aria-hidden="true">PLIKATORZY<small>.PL</small></span></span>
+      <p class="loader__sub">Car wrapping · Gdynia</p>
+    </div>
+    <div class="loader__bar"><i id="loader-fill"></i></div>
+    <div class="loader__meta"><span id="loader-label">ŁADOWANIE DOŚWIADCZENIA</span><span id="loader-pct">0%</span></div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="index.html" aria-label="Aplikatorzy — strona główna">
+    <span class="aplogo aplogo--nav" role="img" aria-label="Aplikatorzy.pl"><span class="aplogo__a" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><path d="M7 31 20 8 33 31h-6.5L20 19l-6.5 12Z" fill="#fff"/></svg></span><span class="aplogo__t" aria-hidden="true">PLIKATORZY<small>.PL</small></span></span>
+  </a>
+  <nav class="nav__links" aria-label="Menu główne"><a href="oferta.html">OFERTA</a><a href="realizacje.html">REALIZACJE</a><a href="szkolenia.html">SZKOLENIA</a><a href="o-nas.html">O NAS</a><a href="kontakt.html">KONTAKT</a></nav>
+  <a class="nav__cta" href="kontakt.html">WYCEŃ OKLEJANIE</a>
+  <button class="nav__burger" id="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false"><i></i><i></i></button>
+</header>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="oferta.html">OFERTA</a><a href="realizacje.html">REALIZACJE</a><a href="szkolenia.html">SZKOLENIA</a><a href="o-nas.html">O NAS</a><a href="kontakt.html">KONTAKT</a>
+  <a class="menu__cta" href="kontakt.html">WYCEŃ OKLEJANIE</a>
+</div>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="stage-veil" id="stage-veil" aria-hidden="true"></div>
+<p class="sr-only">Interaktywny film 3D: samochód zmienia kolor folii po wyborze przycisku „Folia”. Przewijaj, aby zobaczyć ofertę: zmiana koloru, folie PPF, grafika, carbon, felgi, przyciemnianie szyb i lamp, body kity. Pełna oferta, realizacje, szkolenia i kontakt są na osobnych stronach.</p>
+
+<div class="beats" id="beats">
+
+  <div class="beat beat--left" id="b-hero">
+    <p class="beat__eyebrow">APLIKATORZY — GDYNIA · CAR WRAPPING</p>
+    <h1 class="beat__display">TWOJE AUTO.<br />TWOJA WIZYTÓWKA.</h1>
+    <p class="beat__note">Zmiana koloru, folie ochronne i stylizacja<br />od blisko 10 lat.</p>
+    <p class="beat__scroll"><span></span>PRZEWIŃ</p>
+  </div>
+
+  <div class="beat beat--strip" id="b-spec">
+    <span>ZMIANA KOLORU</span>
+    <span>FOLIE PPF</span>
+    <span>GRAFIKA</span>
+    <span>CARBON</span>
+  </div>
+
+  <div class="beat beat--right" id="b-headlight">
+    <p class="beat__index">01 — LAMPY I SZYBY</p>
+    <h2 class="beat__display">DROBIAZG,<br />KTÓRY ZMIENIA PRZÓD.</h2>
+    <p class="beat__body">
+      Przyciemniane lampy i szyby nadają autu<br />
+      spójny, ciemniejszy charakter.
+    </p>
+  </div>
+
+  <div class="beat beat--left" id="b-wheel">
+    <p class="beat__index">02 — FELGI</p>
+    <h2 class="beat__display">FELGI W NOWYM<br />WYDANIU.</h2>
+    <p class="beat__body">
+      Proszkowe malowanie felg w kolorach<br />
+      z palety RAL.
+    </p>
+  </div>
+
+  <div class="beat beat--center-bottom" id="b-front">
+    <h2 class="beat__display beat__display--wide">OKLEIMY WSZYSTKO,<br />CO DA SIĘ OKLEIĆ.</h2>
+  </div>
+
+  <div class="beat beat--left" id="b-selection">
+    <p class="beat__eyebrow">ZMIANA KOLORU</p>
+    <h2 class="beat__display">CAŁE AUTO.<br />NOWY KOLOR.</h2>
+    <p class="beat__body">
+      Mat, satyna, połysk, chrom. Wybierz folię<br />
+      na dole ekranu i zobacz efekt na tym samochodzie.
+    </p>
+  </div>
+
+  <div class="beat beat--numbers" id="b-numbers">
+    <div><strong>~10 lat</strong><span>w car wrappingu</span></div>
+    <div><strong>6</strong><span>światowych producentów folii</span></div>
+    <div><strong>1.</strong><span>black chrome w Polsce — Mercedes SLS AMG</span></div>
+  </div>
+
+  <div class="beat beat--right" id="b-doors">
+    <p class="beat__index">03 — FOLIE OCHRONNE</p>
+    <h2 class="beat__display">CHROŃ LAKIER.<br />ZACHOWAJ WARTOŚĆ.</h2>
+    <p class="beat__body">
+      Przezroczysta folia PPF przyjmuje kamienie<br />
+      i zarysowania zamiast lakieru.
+    </p>
+  </div>
+
+  <div class="beat beat--right" id="b-interior">
+    <p class="beat__index">04 — WNĘTRZE</p>
+    <h2 class="beat__display">CARBON, SKÓRA,<br />ALCANTARA.</h2>
+    <p class="beat__body">
+      Detale wnętrza w karbonie oraz tapicerki<br />
+      skórzane i z alcantary.
+    </p>
+  </div>
+
+  <div class="beat beat--left" id="b-materials">
+    <h2 class="beat__display beat__display--wide">REALIZUJEMY NAWET NAJBARDZIEJ<br />SZALONE POMYSŁY.</h2>
+  </div>
+
+  <div class="beat beat--right" id="b-wing">
+    <p class="beat__index">05 — BODY KITY</p>
+    <h2 class="beat__display">BODY KITY I<br />ELEMENTY AERO.</h2>
+    <p class="beat__body">
+      Sprzedaż i montaż body kitów,<br />
+      spoilerów i dodatków.
+    </p>
+  </div>
+
+  <div class="beat beat--left" id="b-rear">
+    <h2 class="beat__display">SŁUCHAMY.<br />DORADZAMY.<br />REALIZUJEMY.</h2>
+  </div>
+
+  <div class="beat beat--right" id="b-badge">
+    <p class="beat__index">06 — PERFORMANCE</p>
+    <h2 class="beat__display">WYDECHY, UKŁADY,<br />TUNING.</h2>
+    <p class="beat__body">
+      Współpracujemy z firmami od tuningu i dystrybutorami<br />
+      części, felg i układów wydechowych.
+    </p>
+  </div>
+
+  <div class="beat beat--center-bottom" id="b-trust">
+    <h2 class="beat__display beat__display--wide">NIE POZWÓL, BY TWOJE AUTO<br />BYŁO JAK TYSIĄC INNYCH.</h2>
+    <p class="beat__note">Samochód to wizytówka.</p>
+  </div>
+
+  <div class="beat beat--final" id="b-final">
+    <p class="beat__eyebrow">OKLEJANIE · STYLIZACJA · GDYNIA</p>
+    <h2 class="beat__display beat__display--xl wordmark">aplikatorzy<span>.pl</span></h2>
+    <p class="beat__note">Car wrapping od blisko 10 lat</p>
+    <div class="beat__cta">
+      <a class="btn btn--solid" href="realizacje.html">ZOBACZ REALIZACJE</a>
+      <a class="btn btn--ghost" href="kontakt.html">WYCEŃ OKLEJANIE</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- The one control on the film — and it is not a button.
+     The pendant that hangs over the car in the hall hangs into the corner of
+     the frame too, on its cord. You reach up and turn the lamp on: the cord
+     tugs, the fitting swings, the cone opens, and the car answers with its
+     own signature struck in the light. The cord runs up behind the nav bar
+     on purpose, so the lamp reads as hanging from the ceiling of the room
+     rather than pinned to the edge of a web page. -->
+<div class="lamp" id="lamp">
+  <button class="lamp__btn" id="beam-toggle" type="button" aria-pressed="false"
+          aria-label="Zapal lampę — światła samochodu i tryb nocny">
+    <span class="lamp__swing" aria-hidden="true">
+      <span class="lamp__cord"></span>
+      <span class="lamp__head">
+        <span class="lamp__ferrule"></span>
+        <span class="lamp__shade"><span class="lamp__inner"></span></span>
+        <span class="lamp__bulb"></span>
+        <span class="lamp__cone"></span>
+      </span>
+    </span>
+
+    <span class="lamp__plate">
+      <span class="lamp__sig lamp__sig--front" aria-hidden="true"><svg viewBox="0 0 34 22" focusable="false"><path d="M2 3 L13 3 L17 11 L21 3 L32 3" /><path d="M17 11 L17 19" /></svg></span>
+      <span class="lamp__text">
+        <span class="lamp__label">ŚWIATŁA</span>
+        <span class="lamp__state">WYŁĄCZONE</span>
+      </span>
+      <span class="lamp__sig lamp__sig--rear" aria-hidden="true"><svg viewBox="0 0 34 22" focusable="false"><path d="M2 3 L13 3 L17 11 L21 3 L32 3" /><path d="M17 11 L17 19" /></svg></span>
+    </span>
+
+    <span class="lamp__hint" aria-hidden="true">KLIKNIJ LAMPĘ</span>
+  </button>
+</div>
+
+
+<div class="wraps" id="wraps" role="group" aria-label="Wybierz folię">
+  <span class="wraps__label">FOLIA</span>
+  <div class="wraps__list"><button class="wraps__dot" type="button" data-wrap="factory" style="--sw:linear-gradient(135deg,#4b2f86,#150a2a)" aria-pressed="false" aria-label="Fabryczny fiolet" title="Fabryczny fiolet"></button><button class="wraps__dot" type="button" data-wrap="blackchrome" style="--sw:linear-gradient(135deg,#8a9099 0%,#101216 42%,#3a3e45 56%,#0a0b0d 100%)" aria-pressed="false" aria-label="Czarny chrom" title="Czarny chrom"></button><button class="wraps__dot" type="button" data-wrap="chrome" style="--sw:linear-gradient(135deg,#ffffff 0%,#9aa3ad 45%,#e8ecf0 60%,#7c858f 100%)" aria-pressed="false" aria-label="Chrom" title="Chrom"></button><button class="wraps__dot" type="button" data-wrap="bluematte" style="--sw:#1d5fae" aria-pressed="false" aria-label="Niebieski mat" title="Niebieski mat"></button><button class="wraps__dot" type="button" data-wrap="greymatte" style="--sw:#5a5e66" aria-pressed="false" aria-label="Szary mat" title="Szary mat"></button><button class="wraps__dot" type="button" data-wrap="redsatin" style="--sw:#b3121c" aria-pressed="false" aria-label="Czerwony satyna" title="Czerwony satyna"></button><button class="wraps__dot" type="button" data-wrap="orange" style="--sw:#ff6a00" aria-pressed="false" aria-label="Pomarańcz" title="Pomarańcz"></button></div>
+  <span class="wraps__name" aria-live="polite">Fabryczny fiolet</span>
+</div>
+
+<!-- film rail: where you are in the sequence, always on screen -->
+<div class="rail" id="rail" aria-hidden="true">
+  <div class="rail__line"><i id="rail-fill"></i></div>
+  <ol class="rail__list" id="rail-list"></ol>
+</div>
+
+
+<div class="cinema" id="cinema" aria-hidden="true"></div>
+
+
+<main class="site" id="site">
+  <section class="section section--offer" id="oferta">
+    <header class="section__head reveal">
+      <span class="section__num">01</span>
+      <h2 class="section__title">OFERTA</h2>
+      <p class="section__lead">Zmiana koloru, ochrona lakieru, grafika, felgi, szyby i lampy, tuning. Pracujemy na materiałach 3M, SOTT, Avery, Hexis, Oracal i Arlon.</p>
+    </header>
+    <div class="offer-peel">
+      <article class="peel-item reveal"><span class="glyph glyph--kolor" aria-hidden="true"><svg viewBox="0 0 120 72"><defs><clipPath id="gk-car"><path d="M6 52H14C16 44 26 44 28 52H88C90 44 100 44 102 52H114V44C114 40 108 38 100 36L80 34C72 26 62 22 50 22C40 22 32 26 26 32L12 36C8 37 6 40 6 44Z"/></clipPath></defs><g clip-path="url(#gk-car)"><rect class="gk-fill" width="120" height="72"/><rect class="gk-wipe" x="-24" width="10" height="72"/></g><path class="g-ln" d="M6 52H14C16 44 26 44 28 52H88C90 44 100 44 102 52H114V44C114 40 108 38 100 36L80 34C72 26 62 22 50 22C40 22 32 26 26 32L12 36C8 37 6 40 6 44Z"/><path class="g-ln g-dim" d="M30 33H80M52 23V33"/><circle class="g-ln" cx="21" cy="52" r="6"/><circle class="g-ln" cx="95" cy="52" r="6"/></svg></span><div><h3>Zmiana koloru auta</h3><p>Profesjonalna zmiana koloru przez oklejanie specjalistycznymi foliami. Poza nowym wyglądem to także ochrona oryginalnego lakieru. Połysk, mat, metalik, perła, carbon, skóra, szczotkowane aluminium.</p></div></article>
+      <article class="peel-item reveal"><span class="glyph glyph--ppf" aria-hidden="true"><svg viewBox="0 0 120 72"><defs><clipPath id="gp-panel"><path d="M10 62 24 12H96L110 62Z"/></clipPath></defs><g clip-path="url(#gp-panel)"><rect class="gp-sheen" x="-40" y="-10" width="18" height="92"/></g><path class="g-ln" d="M10 62 24 12H96L110 62Z"/><path class="g-ln g-acc gp-shield" pathLength="1" d="M60 22 75 28V38C75 47 68 52 60 55 52 52 45 47 45 38V28Z"/></svg></span><div><h3>Ochrona lakieru — folie zabezpieczające</h3><p>Bezbarwne folie dla tych, którzy nie chcą zmieniać koloru: PCV 100 mikronów lub grubsze poliuretanowe, powyżej 130. Xpel, PremiumShield, 3M, Bruxafol.</p></div></article>
+      <article class="peel-item reveal"><span class="glyph glyph--grafika" aria-hidden="true"><svg viewBox="0 0 120 72"><path class="g-ln g-dim" d="M4 64H116"/><path class="g-ln gg-s gg-1" pathLength="1" d="M4 52C26 52 34 18 60 22S92 50 116 14"/><path class="g-ln g-acc gg-s gg-2" pathLength="1" d="M4 60C30 58 40 30 62 32S96 56 116 26"/><path class="g-ln gg-s gg-3" pathLength="1" d="M4 44C22 42 30 10 56 12S88 38 116 6"/></svg></span><div><h3>Grafika</h3><p>Stylizacje graficzne dla aut do driftu, rajdów, offroadu i wyścigów. Pracujemy z najlepszymi w kraju grafikami — każdy projekt jest oryginalny.</p></div></article>
+      <article class="peel-item reveal"><span class="glyph glyph--felgi" aria-hidden="true"><svg viewBox="0 0 120 72"><circle class="g-ln" cx="60" cy="36" r="31"/><circle class="g-ln g-dim" cx="60" cy="36" r="24"/><path class="g-ln g-acc gf-cal" d="M74 15A25 25 0 0 1 84 28"/><g class="gf-spin"><circle class="g-ln" cx="60" cy="36" r="21"/><path class="g-ln" d="M60 36V15M60 36 80 29.5M60 36 72.3 53M60 36 47.7 53M60 36 40 29.5"/><circle class="g-ln" cx="60" cy="36" r="4"/></g></svg></span><div><h3>Lakierowanie felg</h3><p>Folia nie jest tu wystarczająco trwała, więc felgi malujemy proszkowo. Dostępne kolory z palety RAL.</p></div></article>
+      <article class="peel-item reveal"><span class="glyph glyph--lampy" aria-hidden="true"><svg viewBox="0 0 120 72"><defs><clipPath id="gl-win"><path d="M14 56 32 16H76V56Z"/></clipPath><linearGradient id="gl-tint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#07080a" stop-opacity=".95"/><stop offset="1" stop-color="#07080a" stop-opacity=".55"/></linearGradient></defs><g clip-path="url(#gl-win)"><rect class="gl-tint" x="0" y="-72" width="120" height="72" fill="url(#gl-tint)"/></g><path class="g-ln" d="M14 56 32 16H76V56Z"/><path class="g-ln g-dim" d="M50 16V56"/><path class="g-ln" d="M88 30H112V48H92C89 48 88 46 88 44Z"/><path class="g-acc-fill gl-lamp" d="M92 34H108V44H94Z"/></svg></span><div><h3>Przyciemnianie szyb i lamp</h3><p>Atestowane folie Armorlite i SunGuard z filtrami UV. Różne kolory folii do przyciemniania szyb i kloszy lamp.</p></div></article>
+      <article class="peel-item reveal"><span class="glyph glyph--performance" aria-hidden="true"><svg viewBox="0 0 120 72"><path class="g-ln" d="M24 60A36 36 0 0 1 96 60"/><path class="g-ln g-acc" d="M87.6 36.9A36 36 0 0 1 96 60" style="stroke-width:2.4"/><path class="g-ln g-dim" d="M30 60H35M60 30V35M85 60H90M38.8 38.8 42.3 42.3M77.7 42.3 81.2 38.8"/><g class="gx-needle"><path class="g-ln g-acc" d="M60 60V30"/></g><circle class="g-ln" cx="60" cy="60" r="3.5"/></svg></span><div><h3>Performance</h3><p>Felgi, zawieszenia, układy wydechowe, body kity, chiptuning — Vossen, Brabus, Milltek, Akrapovič, KW, Eibach i wielu innych.</p></div></article>
+    </div>
+    <div class="section__foot reveal"><a class="btn btn--ghost" href="oferta.html">CAŁA OFERTA</a></div>
+  </section>
+
+  <section class="section" id="realizacje">
+    <header class="section__head reveal">
+      <span class="section__num">02</span>
+      <h2 class="section__title">REALIZACJE</h2>
+      <p class="section__lead">Wybrane prace: chrom, mat, satyna, zmiana koloru. Pełna galeria ze zdjęciami samochodów jest na osobnej stronie.</p>
+    </header>
+    <div class="gallery gallery--home" id="preview"></div>
+    <div class="section__foot reveal"><a class="btn btn--ghost" href="realizacje.html">ZOBACZ WSZYSTKIE REALIZACJE</a></div>
+  </section>
+
+  <section class="section" id="szkolenia">
+    <div class="editorial">
+      <div class="editorial__side reveal"><span class="section__num">03</span><h2 class="section__title">SZKOLENIA</h2></div>
+      <div class="editorial__main">
+        <p class="editorial__big reveal">Chcesz dołączyć do branży car wrappingu?</p>
+        <p class="reveal">Indywidualne szkolenia z oklejania pojazdów, z bardzo dużym naciskiem na praktykę. Jeden dzień to około 8 godzin pracy na prawdziwych elementach.</p>
+        <div class="stats reveal">
+          <div><strong>2000 zł</strong><span>netto za dzień, od osoby</span></div>
+          <div><strong>3</strong><span>osoby maksymalnie</span></div>
+          <div><strong>Gdynia</strong><span>nasza pracownia</span></div>
+        </div>
+        <div class="section__foot reveal"><a class="btn btn--ghost" href="szkolenia.html">O SZKOLENIACH</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="partnerzy">
+    <header class="section__head reveal">
+      <span class="section__num">04</span>
+      <h2 class="section__title">NASI PARTNERZY</h2>
+    </header>
+    <div class="partners" id="partners"></div>
+  </section>
+
+  <section class="strip reveal"><h2>Jeśli jesteś zainteresowany <em>oklejeniem</em> pojazdu — nie czekaj, zgłoś się do nas.</h2><p>ul. Nowodworcowa 13, 81-581 Gdynia · <a href="tel:+48789353198">+48 789 353 198</a></p><div class="btn-row"><a class="btn btn--solid" href="kontakt.html">WYCEŃ OKLEJANIE</a><a class="btn btn--ghost" href="realizacje.html">ZOBACZ REALIZACJE</a></div></section>
+
+  <footer class="footer">
+  <div class="footer__top">
+    <span class="aplogo aplogo--footer" role="img" aria-label="Aplikatorzy.pl"><span class="aplogo__a" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><path d="M7 31 20 8 33 31h-6.5L20 19l-6.5 12Z" fill="#fff"/></svg></span><span class="aplogo__t" aria-hidden="true">PLIKATORZY<small>.PL</small></span></span>
+    <p>Car wrapping · folie ochronne · stylizacja pojazdów</p>
+    <p style="margin-top:1.1rem">ul. Nowodworcowa 13, 81-581 Gdynia · <a href="tel:+48789353198">+48 789 353 198</a> · <a href="mailto:biuro@aplikatorzy.pl">biuro@aplikatorzy.pl</a></p>
+  </div>
+  <div class="footer__bar">
+    <p>© <span id="year">2026</span> Aplikatorzy · koncepcja strony: LA PASSION</p>
+    <p class="footer__credit">Model 3D: „Lamborghini Revuelto” — Anatolian Studios, CC BY 4.0.</p>
+  </div>
+</footer>
+</main>
+
+
+<div class="fatal" id="fatal" hidden>
+  <div class="fatal__box">
+    <h2>Wersja 3D niedostępna na tym urządzeniu</h2>
+    <p id="fatal-msg"></p>
+    <p class="fatal__hint">Strona działa dalej — przewiń, aby zobaczyć ofertę.</p>
+  </div>
+</div>
+
+<script>
+  // Anything that stops the module graph from loading at all would otherwise
+  // leave a blank page; show it instead.
+  (function () {
+    function fail(msg) {
+      var box = document.getElementById('fatal');
+      var el = document.getElementById('fatal-msg');
+      var loader = document.getElementById('loader');
+      if (loader) loader.classList.add('is-done');
+      if (el) el.textContent = msg;
+      if (box) box.hidden = false;
+      document.body && document.body.classList.remove('is-locked');
+      document.querySelectorAll('.reveal').forEach(function (n) { n.classList.add('is-in'); });
+    }
+    window.addEventListener('error', function (e) {
+      if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+        fail('Nie udało się wczytać zasobu: ' + (e.target.src || e.target.href));
+      } else if (e.message) {
+        fail(e.message);
+      }
+    }, true);
+    window.addEventListener('unhandledrejection', function (e) {
+      var m = String((e.reason && e.reason.message) || e.reason);
+      if (/skipped|AbortError|Transition/i.test(m + ' ' + (e.reason && e.reason.name))) return;
+      fail(m);
+    });
+  })();
+</script>
+
+<!-- three.js i GSAP leżą lokalnie w /vendor – 3D działa bez zewnętrznych CDN -->
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
+<script type="module" src="src/main.js"></script>
+
+
+</body>
+</html>
