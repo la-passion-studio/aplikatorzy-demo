@@ -4,6 +4,10 @@ Koncepcja nowej strony [aplikatorzy.pl](https://aplikatorzy.pl) od LA PASSION: f
 
 ## Jak obejrzeć
 
+**Online:** https://la-passion-studio.github.io/aplikatorzy-demo/
+
+**Lokalnie:**
+
 Strona to statyczne pliki w `site/`, ale moduły JS i 3D wymagają serwera (nie działa z `file://`).
 
 **Najprościej (Mac):**
